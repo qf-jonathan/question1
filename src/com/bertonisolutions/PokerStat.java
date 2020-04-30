@@ -28,7 +28,7 @@ public class PokerStat {
     }
 
     public double winProbability(Hand hand) {
-        int l = 1, r = allHands.size();
+        int l = -1, r = allHands.size();
         while (l + 1 < r) {
             int m = l + (r - l) / 2;
             if (allHands.get(m).compareTo(hand) >= 0) r = m;
