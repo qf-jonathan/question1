@@ -85,7 +85,7 @@ public class Hand implements Comparable<Hand> {
         //STRAIGHT
         boolean consecutive = true;
         for (int i = 0; i < 4; i++) {
-            if (this.hand[i].getValue() != this.hand[i + 1].getValue() + 1) {
+            if (this.hand[i].getValue() != this.hand[i + 1].getValue() - 1) {
                 consecutive = false;
                 break;
             }
@@ -131,7 +131,7 @@ public class Hand implements Comparable<Hand> {
         boolean consecutiveSameSuit = true;
         for (int i = 0; i < 4; i++) {
             if (this.hand[i].getSuit() != this.hand[i + 1].getSuit() ||
-                    this.hand[i].getValue() != this.hand[i + 1].getValue() + 1) {
+                    this.hand[i].getValue() != this.hand[i + 1].getValue() - 1) {
                 consecutiveSameSuit = false;
                 break;
             }
@@ -143,7 +143,7 @@ public class Hand implements Comparable<Hand> {
         //ROYAL FLUSH
         boolean isRoyal = sameSuit;
         for (int i = 0; i < 5; i++) {
-            if (this.hand[i].getValue() != i + 9) {
+            if (this.hand[i].getValue() != i + 8) {
                 isRoyal = false;
                 break;
             }
